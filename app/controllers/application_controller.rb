@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-
+  
     def issue_token(data)
         JWT.encode(data, secret)
     end
@@ -20,4 +20,5 @@ class ApplicationController < ActionController::API
     def secret
         "Change this later"
     end
+
 end
