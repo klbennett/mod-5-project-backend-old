@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users
       post 'login', to: 'users#login'
       post 'signup', to: 'users#signup'
+      get 'user/:id', to: 'users#show'
       
       resources :lists
       post 'createlist', to: 'lists#create'
