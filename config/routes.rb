@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'list_item/show'
+  get 'list_item/create'
+  get 'list_item/delete'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api do
@@ -11,6 +14,10 @@ Rails.application.routes.draw do
       resources :lists
       post 'createlist', to: 'lists#create'
       get 'list/:id', to: 'lists#show'
+      # post 'list/:id', to: 'lists#create'
+
+      resources :list_items
+      post 'createlistitem', to: 'list_items#create'
 
     end
   end
